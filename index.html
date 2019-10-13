@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>QR Code</title>
+</head>
+<body>
+<script type="text/javascript" src="./src/jquery.min.js"></script>
+<script type="text/javascript" src="./src/jquery.qrcode.js"></script>
+<script type="text/javascript" src="./src/qrcode.js"></script>
+
+<h2>テキスト</h2>
+<input type="text" size=50 value="text" class="text">
+<br>
+<button id="btn">QRコードを生成</button>
+
+<h2>QRコード</h2>
+<div id="qrcodeCanvas"></div>
+<script>
+    $(function() {
+        $('#btn').click(function(e) {
+            $("#qrcodeCanvas").empty();
+    	    jQuery('#qrcodeCanvas').qrcode({
+	    	    text	: $('.text').val()
+    	    });
+        });
+    });
+</script>
+
+</body>
+</html>
